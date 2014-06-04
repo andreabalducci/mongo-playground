@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<postlinks>
+  <row Id="116" CreationDate="2013-11-09T21:15:11.047" PostId="1141" RelatedPostId="122" LinkTypeId="1" />
+  <row Id="314" CreationDate="2013-11-12T20:38:05.970" PostId="1238" RelatedPostId="65" LinkTypeId="1" />
+  <row Id="787" CreationDate="2013-11-27T12:04:44.213" PostId="1405" RelatedPostId="1398" LinkTypeId="1" />
+  <row Id="936" CreationDate="2013-12-07T20:30:13.003" PostId="1451" RelatedPostId="1446" LinkTypeId="1" />
+  <row Id="1147" CreationDate="2013-12-12T08:03:29.203" PostId="1451" RelatedPostId="1155" LinkTypeId="1" />
+  <row Id="1283" CreationDate="2013-12-15T18:09:50.820" PostId="1495" RelatedPostId="1238" LinkTypeId="1" />
+  <row Id="1579" CreationDate="2013-12-24T14:59:32.690" PostId="1539" RelatedPostId="1193" LinkTypeId="1" />
+  <row Id="2112" CreationDate="2014-02-02T18:36:01.653" PostId="1660" RelatedPostId="1644" LinkTypeId="1" />
+  <row Id="2146" CreationDate="2014-02-04T22:51:55.387" PostId="1674" RelatedPostId="1580" LinkTypeId="1" />
+  <row Id="2148" CreationDate="2014-02-04T23:46:20.563" PostId="1674" RelatedPostId="1580" LinkTypeId="3" />
+  <row Id="2314" CreationDate="2014-02-19T13:43:57.220" PostId="1705" RelatedPostId="1704" LinkTypeId="1" />
+  <row Id="2375" CreationDate="2014-02-24T19:53:54.173" PostId="1718" RelatedPostId="15" LinkTypeId="1" />
+  <row Id="3368" CreationDate="2014-04-26T10:37:35.897" PostId="1935" RelatedPostId="1930" LinkTypeId="1" />
+</postlinks>

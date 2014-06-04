@@ -15,7 +15,7 @@ public class mongoConnectionTest {
 
     @Before
     public void setUp() throws Exception {
-        client = new MongoClient();
+        client = new MongoClient("localhost", 31000);
         database = client.getDB("playground");
     }
 
