@@ -31,7 +31,12 @@ public class UsersWriter {
     private DBObject Map(User user){
         DBObject mapped = new BasicDBObject("_id", user.getId())
                 .append("name", user.getDisplayName())
-                .append("age", user.getAge());
+                .append("age", user.getAge())
+                .append("reputation", user.getReputation())
+                .append("aboutme", user.getAboutMe())
+                .append("location", user.getLocation())
+                .append("website", user.getWebsiteUrl())
+                ;
         return mapped;
     }
 }
