@@ -1,9 +1,11 @@
 package model;
 
+import com.mongodb.DBObject;
+
 /**
  * Created by andrea on 04/06/14.
  */
-public class User {
+public class User  {
     private int Id;
     private String DisplayName;
     private String WebsiteUrl;
