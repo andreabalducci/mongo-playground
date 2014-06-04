@@ -1,9 +1,9 @@
 package parsers;
 
-import com.mongodb.DB;
-import com.mongodb.MongoClient;
+import helpers.stackOverflow;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import writers.UsersWriter;
 
@@ -15,11 +15,8 @@ public class UsersParserTest {
 
     @Before
     public void setUp() throws Exception {
-        MongoClient client = new MongoClient("localhost", 31000);
-        DB db = client.getDB("so-demo");
-
         parser = new UsersParser();
-        writer = new UsersWriter(db.getCollection("users"));
+        writer = new UsersWriter(stackOverflow.getUsers());
     }
 
     @After
@@ -27,7 +24,7 @@ public class UsersParserTest {
 
     }
 
-    @Test
+    @Test @Ignore
     public void testLoad() throws Exception {
         writer.Drop();
         parser.Load("./italian.stackexchange.com/Users.xml", usr -> {
