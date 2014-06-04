@@ -40,13 +40,19 @@ public class UsersHandler extends DefaultHandler {
 //        }
 //        System.out.println();
 
+        String age = attributes.getValue("Age");
+        if(age == null)
+            age = "0";
+
         User usr = new User(
                 Integer.parseInt(attributes.getValue("Id")),
                 attributes.getValue("DisplayName"),
                 attributes.getValue("Location"),
                 attributes.getValue("WebsiteUrl"),
-                attributes.getValue("AboutMe")
-        );
+                attributes.getValue("AboutMe"),
+                Integer.parseInt(attributes.getValue("Reputation")),
+                Integer.parseInt(age)
+            );
 
         this.consumer.accept(usr);
     }
