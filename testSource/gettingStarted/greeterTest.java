@@ -7,11 +7,11 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class greeterTest {
-    Greeter tutorial;
+    Greeter greeter;
 
     @Before
     public void setUp() throws Exception {
-        tutorial = new Greeter();
+        greeter = new Greeter();
     }
 
     @After
@@ -21,6 +21,13 @@ public class greeterTest {
 
     @Test
     public void testHello() throws Exception {
-        assertEquals("Hello", tutorial.Hello());
+        assertEquals("Hello", greeter.Hello());
     }
+
+    @Test
+    public void testCount() {
+        assertEquals(1, greeter.Count());
+
+    }
+
 }
