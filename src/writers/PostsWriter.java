@@ -35,6 +35,7 @@ public class PostsWriter extends BaseWriter {
             .append("favs", post.getFavoriteCount())
             .append("comments", post.getCommentCount())
             .append("answers", post.getAnswerCount())
+            .append("tags", post.getTags())
         ;
 
         return mapped;

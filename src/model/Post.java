@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Set;
+
 /**
  * Created by andrea on 05/06/14.
  */
@@ -18,6 +20,7 @@ public class Post {
     private final int favoriteCount;
     private final int acceptedAnswerId;
 
+    private final String[] tags;
 
     public Post(int id,
                 String title,
@@ -30,8 +33,8 @@ public class Post {
                 int lastEditorUserId,
                 int answerCount,
                 int commentCount,
-                int favoriteCount
-    ) {
+                int favoriteCount,
+                String[] tags) {
         this.id = id;
         this.title = title;
         this.body = body;
@@ -44,6 +47,7 @@ public class Post {
         this.answerCount = answerCount;
         this.commentCount = commentCount;
         this.favoriteCount = favoriteCount;
+        this.tags = tags;
     }
 
     public String getBody() {
@@ -92,5 +96,9 @@ public class Post {
 
     public int getAnswerCount() {
         return answerCount;
+    }
+
+    public String[] getTags() {
+        return tags;
     }
 }

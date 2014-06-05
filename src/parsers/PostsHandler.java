@@ -1,11 +1,10 @@
 package parsers;
 
 import model.Post;
-import model.User;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
 
+import java.util.Set;
 import java.util.function.Consumer;
 
 /**
@@ -44,6 +43,14 @@ public class PostsHandler extends BaseHandler {
         if(age == null)
             age = "0";
 
+        String tagsAsString = attributes.getValue("Tags");
+        String tags[] = new String[0];
+
+        if(tagsAsString != null){
+            tagsAsString = tagsAsString.replace("><",",").replace("<","").replace(">","");
+            tags = tagsAsString.split(",");
+        }
+
         Post post = new Post(
             GetInt(attributes.getValue("Id")),
             attributes.getValue("Title"),
@@ -56,8 +63,8 @@ public class PostsHandler extends BaseHandler {
             GetInt(attributes.getValue("LastEditorUserId")),
             GetInt(attributes.getValue("AnswerCount")),
             GetInt(attributes.getValue("CommentCount")),
-            GetInt(attributes.getValue("FavoriteCount"))
-        );
+            GetInt(attributes.getValue("FavoriteCount")),
+                tags);
 
         this.consumer.accept(post);
     }
