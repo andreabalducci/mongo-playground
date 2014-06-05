@@ -5,16 +5,16 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import writers.UsersWriter;
+import writers.PostsWriter;
 
-public class UsersParserTest {
-    UsersParser parser;
-    UsersWriter writer;
+public class PostsParserTest {
+    PostsParser parser;
+    PostsWriter writer;
 
     @Before
     public void setUp() throws Exception {
-        parser = new UsersParser();
-        writer = new UsersWriter(StackOverflow.getUsers());
+        writer = new PostsWriter(StackOverflow.getPosts());
+        parser = new PostsParser();
     }
 
     @After
@@ -25,9 +25,9 @@ public class UsersParserTest {
     @Test @Ignore
     public void testLoad() throws Exception {
         writer.Drop();
-        parser.Load("./italian.stackexchange.com/Users.xml", usr -> {
-            System.out.println("User " + usr.getDisplayName());
-            writer.Insert(usr);
+        parser.Load("./italian.stackexchange.com/Posts.xml", post -> {
+            System.out.println("Post " + post.getId());
+            writer.Insert(post);
         });
     }
 }

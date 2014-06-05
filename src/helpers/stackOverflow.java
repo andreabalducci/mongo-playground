@@ -9,7 +9,7 @@ import java.net.UnknownHostException;
 /**
  * Created by andrea on 04/06/14.
  */
-public class stackOverflow {
+public class StackOverflow {
     static MongoClient client;
 
     static {
@@ -24,7 +24,11 @@ public class stackOverflow {
         return client.getDB("so-demo");
     }
 
-    public static DBCollection getUsers(){
+    public static DBCollection getUsers() {
         return getDatabase().getCollection("users");
+    }
+
+    public static DBCollection getPosts() {
+        return getDatabase().getCollection("posts");
     }
 }
