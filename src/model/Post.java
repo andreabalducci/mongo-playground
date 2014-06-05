@@ -5,24 +5,35 @@ package model;
  */
 public class Post {
     private final int id;
+
+    private final String title;
     private final String body;
     private final int postTypeId;
     private final int score;
     private final int viewCount;
     private final int ownerUserId;
     private final int lastEditorUserId;
+    private final int answerCount;
+    private final int commentCount;
+    private final int favoriteCount;
     private final int acceptedAnswerId;
 
+
     public Post(int id,
+                String title,
                 String body,
                 int postTypeId,
                 int acceptedAnswerId,
                 int score,
                 int viewCount,
                 int ownerUserId,
-                int lastEditorUserId
+                int lastEditorUserId,
+                int answerCount,
+                int commentCount,
+                int favoriteCount
     ) {
         this.id = id;
+        this.title = title;
         this.body = body;
         this.postTypeId = postTypeId;
         this.acceptedAnswerId = acceptedAnswerId;
@@ -30,6 +41,9 @@ public class Post {
         this.viewCount = viewCount;
         this.ownerUserId = ownerUserId;
         this.lastEditorUserId = lastEditorUserId;
+        this.answerCount = answerCount;
+        this.commentCount = commentCount;
+        this.favoriteCount = favoriteCount;
     }
 
     public String getBody() {
@@ -64,4 +78,19 @@ public class Post {
         return ownerUserId;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public int getFavoriteCount() {
+        return favoriteCount;
+    }
+
+    public int getCommentCount() {
+        return commentCount;
+    }
+
+    public int getAnswerCount() {
+        return answerCount;
+    }
 }

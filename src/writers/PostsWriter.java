@@ -24,6 +24,7 @@ public class PostsWriter extends BaseWriter {
 
     private DBObject Map(Post post) {
         BasicDBObject mapped = new BasicDBObject("_id", post.getId())
+            .append("title", post.getTitle())
             .append("body", post.getBody())
             .append("answerId", post.getAcceptedAnswerId())
             .append("lastEditorId", post.getLastEditorUserId())
@@ -31,6 +32,9 @@ public class PostsWriter extends BaseWriter {
             .append("postType", post.getPostTypeId())
             .append("score", post.getScore())
             .append("views", post.getViewCount())
+            .append("favs", post.getFavoriteCount())
+            .append("comments", post.getCommentCount())
+            .append("answers", post.getAnswerCount())
         ;
 
         return mapped;

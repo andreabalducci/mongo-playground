@@ -46,13 +46,17 @@ public class PostsHandler extends BaseHandler {
 
         Post post = new Post(
             GetInt(attributes.getValue("Id")),
+            attributes.getValue("Title"),
             attributes.getValue("Body"),
             GetInt(attributes.getValue("PostTypeId")),
             GetInt(attributes.getValue("AcceptedAnswerId")),
             GetInt(attributes.getValue("Score")),
             GetInt(attributes.getValue("ViewCount")),
             GetInt(attributes.getValue("OwnerUserId")),
-            GetInt(attributes.getValue("LastEditorUserId"))
+            GetInt(attributes.getValue("LastEditorUserId")),
+            GetInt(attributes.getValue("AnswerCount")),
+            GetInt(attributes.getValue("CommentCount")),
+            GetInt(attributes.getValue("FavoriteCount"))
         );
 
         this.consumer.accept(post);
