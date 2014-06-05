@@ -64,7 +64,10 @@ public class PostsHandler extends BaseHandler {
             GetInt(attributes.getValue("AnswerCount")),
             GetInt(attributes.getValue("CommentCount")),
             GetInt(attributes.getValue("FavoriteCount")),
-                tags);
+            tags,
+            GetDate(attributes.getValue("CreationDate")),
+            GetDate(attributes.getValue("LastEditDate"))
+        );
 
         this.consumer.accept(post);
     }

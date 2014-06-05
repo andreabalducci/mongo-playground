@@ -36,6 +36,8 @@ public class PostsWriter extends BaseWriter {
             .append("comments", post.getCommentCount())
             .append("answers", post.getAnswerCount())
             .append("tags", post.getTags())
+            .append("createdAt", post.getCreationDate())
+            .append("updatedAt", post.getLastEditDate())
         ;
 
         return mapped;
