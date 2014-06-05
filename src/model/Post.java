@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Date;
 import java.util.Set;
 
 /**
@@ -21,6 +22,8 @@ public class Post {
     private final int acceptedAnswerId;
 
     private final String[] tags;
+    private final Date creationDate;
+    private final Date lastEditDate;
 
     public Post(int id,
                 String title,
@@ -34,7 +37,10 @@ public class Post {
                 int answerCount,
                 int commentCount,
                 int favoriteCount,
-                String[] tags) {
+                String[] tags,
+                Date creationDate,
+                Date lastEditDate
+    ) {
         this.id = id;
         this.title = title;
         this.body = body;
@@ -48,6 +54,8 @@ public class Post {
         this.commentCount = commentCount;
         this.favoriteCount = favoriteCount;
         this.tags = tags;
+        this.creationDate = creationDate;
+        this.lastEditDate = lastEditDate;
     }
 
     public String getBody() {
@@ -100,5 +108,13 @@ public class Post {
 
     public String[] getTags() {
         return tags;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public Date getLastEditDate() {
+        return lastEditDate;
     }
 }
