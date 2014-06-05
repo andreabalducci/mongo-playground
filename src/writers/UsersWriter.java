@@ -27,7 +27,11 @@ public class UsersWriter extends BaseWriter {
                 .append("name", user.getDisplayName())
                 .append("reputation", user.getReputation())
                 .append("aboutme", user.getAboutMe())
-                .append("location", user.getLocation());
+                .append("location", user.getLocation())
+                .append("createdAt", user.getCreatedAt())
+                .append("lastSeenAt", user.getLastSeenAt())
+
+        ;
 
         if (this.isAllowNulls() || user.getAge() > 0) {
             mapped.append("age", user.getAge());

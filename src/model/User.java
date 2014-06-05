@@ -2,6 +2,8 @@ package model;
 
 import com.mongodb.DBObject;
 
+import java.util.Date;
+
 /**
  * Created by andrea on 04/06/14.
  */
@@ -13,6 +15,8 @@ public class User {
     private String AboutMe;
     private int Reputation;
     private int Age;
+    private final Date createdAt;
+    private final Date lastSeenAt;
 
     public User(
         int id,
@@ -21,7 +25,9 @@ public class User {
         String location,
         String aboutMe,
         int reputation,
-        int age
+        int age,
+        Date createdAt,
+        Date lastSeenAt
     ) {
         Id = id;
         DisplayName = displayName;
@@ -30,6 +36,8 @@ public class User {
         AboutMe = aboutMe;
         Reputation = reputation;
         Age = age;
+        this.createdAt = createdAt;
+        this.lastSeenAt = lastSeenAt;
     }
 
     public int getId() {
@@ -58,5 +66,13 @@ public class User {
 
     public int getAge() {
         return Age;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public Date getLastSeenAt() {
+        return lastSeenAt;
     }
 }

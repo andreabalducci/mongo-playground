@@ -8,7 +8,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.function.Consumer;
 
-public class UsersHandler extends DefaultHandler {
+public class UsersHandler extends BaseHandler {
     private Consumer<User> consumer;
 
     public UsersHandler(Consumer<User> consumer) {
@@ -37,18 +37,16 @@ public class UsersHandler extends DefaultHandler {
 //        }
 //        System.out.println();
 
-        String age = attributes.getValue("Age");
-        if(age == null)
-            age = "0";
-
         User usr = new User(
-                Integer.parseInt(attributes.getValue("Id")),
+                GetInt(attributes.getValue("Id")),
                 attributes.getValue("DisplayName"),
                 attributes.getValue("WebsiteUrl"),
                 attributes.getValue("Location"),
                 attributes.getValue("AboutMe"),
-                Integer.parseInt(attributes.getValue("Reputation")),
-                Integer.parseInt(age)
+                GetInt(attributes.getValue("Reputation")),
+                GetInt(attributes.getValue("Age")),
+                GetDate(attributes.getValue("CreationDate")),
+                GetDate(attributes.getValue("LastAccessDate"))
             );
 
         this.consumer.accept(usr);
