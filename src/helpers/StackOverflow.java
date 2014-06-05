@@ -31,4 +31,8 @@ public class StackOverflow {
     public static DBCollection getPosts() {
         return getDatabase().getCollection("posts");
     }
+
+    public static DBCollection getComments() {
+        return getDatabase().getCollection("comments");
+    }
 }
