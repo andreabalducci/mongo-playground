@@ -5,7 +5,7 @@ import com.mongodb.DBObject;
 /**
  * Created by andrea on 04/06/14.
  */
-public class User  {
+public class User {
     private int Id;
     private String DisplayName;
     private String WebsiteUrl;
@@ -14,7 +14,15 @@ public class User  {
     private int Reputation;
     private int Age;
 
-    public User(int id, String displayName, String websiteUrl, String location, String aboutMe, int reputation, int age) {
+    public User(
+        int id,
+        String displayName,
+        String websiteUrl,
+        String location,
+        String aboutMe,
+        int reputation,
+        int age
+    ) {
         Id = id;
         DisplayName = displayName;
         WebsiteUrl = websiteUrl;

@@ -47,8 +47,8 @@ public class UsersHandler extends DefaultHandler {
         User usr = new User(
                 Integer.parseInt(attributes.getValue("Id")),
                 attributes.getValue("DisplayName"),
-                attributes.getValue("Location"),
                 attributes.getValue("WebsiteUrl"),
+                attributes.getValue("Location"),
                 attributes.getValue("AboutMe"),
                 Integer.parseInt(attributes.getValue("Reputation")),
                 Integer.parseInt(age)
