@@ -8,9 +8,6 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.function.Consumer;
 
-/**
- * Created by andrea on 04/06/14.
- */
 public class UsersHandler extends DefaultHandler {
     private Consumer<User> consumer;
 

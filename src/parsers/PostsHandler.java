@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 /**
  * Created by andrea on 05/06/14.
  */
-public class PostsHandler extends DefaultHandler {
+public class PostsHandler extends BaseHandler {
     private Consumer<Post> consumer;
 
     public PostsHandler(Consumer<Post> consumer) {
@@ -45,8 +45,14 @@ public class PostsHandler extends DefaultHandler {
             age = "0";
 
         Post post = new Post(
-            Integer.parseInt(attributes.getValue("Id")),
-            attributes.getValue("Body")
+            GetInt(attributes.getValue("Id")),
+            attributes.getValue("Body"),
+            GetInt(attributes.getValue("PostTypeId")),
+            GetInt(attributes.getValue("AcceptedAnswerId")),
+            GetInt(attributes.getValue("Score")),
+            GetInt(attributes.getValue("ViewCount")),
+            GetInt(attributes.getValue("OwnerUserId")),
+            GetInt(attributes.getValue("LastEditorUserId"))
         );
 
         this.consumer.accept(post);
