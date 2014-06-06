@@ -34,7 +34,8 @@ public class VotesHandler extends BaseHandler {
             GetInt(attributes.getValue("Id")),
             GetInt(attributes.getValue("PostId")),
             GetInt(attributes.getValue("VoteTypeId")),
-            GetDate(attributes.getValue("CreationDate"))
+            GetDate(attributes.getValue("CreationDate")),
+            GetInt(attributes.getValue("UserId"))
         );
 
         this.consumer.accept(vote);

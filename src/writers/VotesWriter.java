@@ -27,7 +27,9 @@ public class VotesWriter extends BaseWriter {
                 .append("typeId", vote.getVoteTypeId())
                 .append("createdAt", vote.getCreationDate())
                 ;
-
+        if(vote.getVoteTypeId() == Vote.TYPE_FAVORITE){
+            mapped.append("favoritedByUserId", vote.getUserId());
+        };
         return mapped;
     }
 }
