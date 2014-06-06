@@ -16,7 +16,7 @@ public class StackOverflow {
         try {
             client = new MongoClient("localhost", 31000);
         } catch (UnknownHostException e) {
-            e.printStackTrace( );
+            e.printStackTrace();
         }
     }
 
@@ -38,5 +38,9 @@ public class StackOverflow {
 
     public static DBCollection getBadges() {
         return getDatabase().getCollection("badges");
+    }
+
+    public static DBCollection getVotes() {
+        return getDatabase().getCollection("votes");
     }
 }
