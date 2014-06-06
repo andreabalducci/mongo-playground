@@ -44,6 +44,6 @@ public class StackOverflow {
         return getDatabase().getCollection("votes");
     }
     public static DBCollection getPostHistory() {
-        return getDatabase().getCollection("post_history");
+        return getDatabase().getCollection("postHistory");
     }
 }
