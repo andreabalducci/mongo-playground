@@ -35,4 +35,8 @@ public class StackOverflow {
     public static DBCollection getComments() {
         return getDatabase().getCollection("comments");
     }
+
+    public static DBCollection getBadges() {
+        return getDatabase().getCollection("badges");
+    }
 }
