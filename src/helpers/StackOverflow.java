@@ -16,7 +16,7 @@ public class StackOverflow {
         try {
             client = new MongoClient("localhost", 31000);
         } catch (UnknownHostException e) {
-            e.printStackTrace();
+            e.printStackTrace( );
         }
     }
 

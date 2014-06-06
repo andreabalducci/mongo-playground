@@ -25,9 +25,27 @@ public class UsersParserTest {
     @Test @Ignore
     public void testLoad() throws Exception {
         writer.Drop();
+
         parser.Load("./italian.stackexchange.com/Users.xml", usr -> {
             System.out.println("User " + usr.getDisplayName());
             writer.Insert(usr);
         });
+
+        System.out.println("Done");
+    }
+
+    @Test @Ignore
+    public void testLoadStackOverflowDump() throws Exception {
+        writer.Drop();
+        final int[] counter = {0};
+
+        parser.Load("/Volumes/Macintosh HD 2/Stack Exchange/Users.xml", usr -> {
+            if(counter[0]++ % 1000 == 0){
+                System.out.println("Done " + counter[0]);
+            }
+            writer.Insert(usr);
+        });
+
+        System.out.println("Done");
     }
 }
